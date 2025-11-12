@@ -9,11 +9,14 @@ workflows:
           rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Build app (no signing)
         script: |
-          xcodebuild -project TodayInspiration.xcodeproj \
-            -scheme TodayInspiration \
+          xcodebuild -project "TodayInspiration.xcodeproj" \
+            -scheme "TodayInspiration" \
             -sdk iphoneos \
             -configuration Release \
-            clean build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+            clean build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
     artifacts:
-      - build/**/*.app
-      - build/**/*.ipa
+      - build/Release-iphoneos/*.app
+      - build/Release-iphoneos/*.ipa
