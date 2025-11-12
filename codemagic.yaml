@@ -2,23 +2,18 @@ workflows:
   ios-build:
     name: iOS Build
     environment:
-      vars:
-        XCODE_WORKSPACE: "TodayInspiration.xcodeproj"
-        XCODE_SCHEME: "TodayInspiration"
-        APPLE_ID: your_apple_id@example.com
       xcode: latest
-      cocoapods: default
     scripts:
-      - name: Install dependencies
+      - name: Clean project
         script: |
-          gem install cocoapods
-          pod install --project-directory=.
+          rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Build iOS app
         script: |
-          xcodebuild -project "$XCODE_WORKSPACE" \
-                     -scheme "$XCODE_SCHEME" \
-                     -sdk iphoneos \
-                     -configuration Release \
-                     clean build CODE_SIGNING_ALLOWED=NO
+          xcodebuild -project TodayInspiration.xcodeproj \
+            -scheme TodayInspiration \
+            -sdk iphoneos \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     artifacts:
-      - build/Release-iphoneos/*.app
+      - build/**/*.app
+      - build/**/*.ipa
