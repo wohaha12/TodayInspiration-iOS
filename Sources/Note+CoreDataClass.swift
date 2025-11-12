@@ -3,9 +3,7 @@ import CoreData
 import UIKit
 
 @objc(Note)
-public class Note: NSManagedObject {
-
-}
+public class Note: NSManagedObject { }
 
 extension Note {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {

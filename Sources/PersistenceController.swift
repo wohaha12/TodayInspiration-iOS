@@ -6,14 +6,13 @@ final class PersistenceController {
 
     let container: NSPersistentCloudKitContainer
 
-    private init(inMemory: Bool = false) {
-        // Programmatically create the model to avoid .xcdatamodeld in this demo
+    private init() {
+        // create model programmatically
         let model = NSManagedObjectModel()
         let noteEntity = NSEntityDescription()
         noteEntity.name = "Note"
         noteEntity.managedObjectClassName = "Note"
 
-        // attributes
         var properties: [NSAttributeDescription] = []
 
         let idAttr = NSAttributeDescription()
@@ -57,15 +56,18 @@ final class PersistenceController {
 
         container = NSPersistentCloudKitContainer(name: "TodayInspiration", managedObjectModel: model)
 
-        if inMemory {
-            let description = NSPersistentStoreDescription()
-            description.type = NSInMemoryStoreType
-            container.persistentStoreDescriptions = [description]
+        // iCloud optional: only configure CloudKit when user enables in settings
+        let useCloud = UserDefaults.standard.bool(forKey: "enableCloudSync")
+        if useCloud {
+            if let description = container.persistentStoreDescriptions.first {
+                description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+                description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+            }
         } else {
-            // Default description uses CloudKit if capabilities enabled in Xcode
-            let description = container.persistentStoreDescriptions.first
-            description?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-            description?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+            let desc = NSPersistentStoreDescription()
+            desc.type = NSSQLiteStoreType
+            desc.url = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("TodayInspiration.sqlite")
+            container.persistentStoreDescriptions = [desc]
         }
 
         container.loadPersistentStores { storeDesc, error in

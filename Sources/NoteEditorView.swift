@@ -16,13 +16,11 @@ struct NoteEditorView: View {
     @State private var showImagePicker = false
     @State private var photoItem: PhotosPickerItem? = nil
 
-    // audio & speech
     @StateObject private var recorder = AudioRecorder()
     @StateObject private var recognizer = SpeechRecognizer()
 
     init(note: Note? = nil) {
         self.note = note
-        // cannot populate @State in init
     }
 
     var body: some View {
@@ -51,12 +49,10 @@ struct NoteEditorView: View {
                     if recorder.isRecording {
                         Button("停止录音") {
                             recorder.stopRecording()
-                            // send for recognition
                             Task {
                                 if let url = recorder.lastFileURL {
                                     let text = await recognizer.recognize(url: url)
                                     if !text.isEmpty {
-                                        // append to body
                                         body += (body.isEmpty ? "" : "\n") + text
                                     }
                                 }
@@ -85,7 +81,7 @@ struct NoteEditorView: View {
             .onChange(of: photoItem) { newItem in
                 Task {
                     if let data = try? await newItem?.loadTransferable(type: Data.self),
-                       let ui = UIImage(data: data) {
+                       let ui = data.flatMap({ UIImage(data: $0) }) {
                         image = ui
                     }
                 }
@@ -107,7 +103,6 @@ struct NoteEditorView: View {
         n.title = title
         n.body = body
         n.setTags(tagsText.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) })
-        n.createdAt = n.createdAt // preserve if exists
         if n.createdAt.timeIntervalSince1970 == 0 {
             n.createdAt = Date()
         }

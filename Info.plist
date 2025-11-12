@@ -5,9 +5,10 @@
     <key>CFBundleDevelopmentRegion</key><string>en</string>
     <key>CFBundleExecutable</key><string>TodayInspiration</string>
     <key>CFBundleIdentifier</key><string>com.example.TodayInspiration</string>
-    <key>CFBundleName</key><string>TodayInspiration</string>
+    <key>CFBundleName</key><string>今日灵感</string>
     <key>CFBundleDisplayName</key><string>今日灵感</string>
     <key>LSApplicationCategoryType</key><string>public.app-category.productivity</string>
+    <key>MinimumOSVersion</key><string>15.0</string>
 
     <!-- Privacy usage descriptions -->
     <key>NSPhotoLibraryUsageDescription</key><string>用于为便签添加图像。</string>

@@ -7,68 +7,61 @@
   objects = {
 
 /* Begin PBXBuildFile section */
-    1D6058900D05DD3D006BFB54 /* TodayInspirationApp.swift in Sources */ = { isa = PBXBuildFile; fileRef = 1D60588F0D05DD3D006BFB54 /* TodayInspirationApp.swift */; };
-    1D6058910D05DD3D006BFB54 /* PersistenceController.swift in Sources */ = { isa = PBXBuildFile; fileRef = 1D6058900D05DD3D006BFB54 /* PersistenceController.swift */; };
+    A1 /* TodayInspirationApp.swift in Sources */ = { isa = PBXBuildFile; fileRef = A100 /* TodayInspirationApp.swift */; };
+    A2 /* PersistenceController.swift in Sources */ = { isa = PBXBuildFile; fileRef = A101 /* PersistenceController.swift */; };
+    A3 /* Note+CoreDataClass.swift in Sources */ = { isa = PBXBuildFile; fileRef = A102 /* Note+CoreDataClass.swift */; };
+    A4 /* ContentView.swift in Sources */ = { isa = PBXBuildFile; fileRef = A103 /* ContentView.swift */; };
+    A5 /* NoteRowView.swift in Sources */ = { isa = PBXBuildFile; fileRef = A104 /* NoteRowView.swift */; };
+    A6 /* NoteEditorView.swift in Sources */ = { isa = PBXBuildFile; fileRef = A105 /* NoteEditorView.swift */; };
+    A7 /* AudioRecorder.swift in Sources */ = { isa = PBXBuildFile; fileRef = A106 /* AudioRecorder.swift */; };
+    A8 /* SpeechRecognizer.swift in Sources */ = { isa = PBXBuildFile; fileRef = A107 /* SpeechRecognizer.swift */; };
+    A9 /* SettingsView.swift in Sources */ = { isa = PBXBuildFile; fileRef = A108 /* SettingsView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-    1D60588F0D05DD3D006BFB54 /* TodayInspirationApp.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayInspirationApp.swift; path = Sources/TodayInspirationApp.swift; sourceTree = "<group>"; };
-    1D6058900D05DD3D006BFB54 /* PersistenceController.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersistenceController.swift; path = Sources/PersistenceController.swift; sourceTree = "<group>"; };
-    1D6058920D05DD3D006BFB54 /* Note+CoreDataClass.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Note+CoreDataClass.swift; path = Sources/Note+CoreDataClass.swift; sourceTree = "<group>"; };
-    1D6058930D05DD3D006BFB54 /* ContentView.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Sources/ContentView.swift; sourceTree = "<group>"; };
-    1D6058940D05DD3D006BFB54 /* NoteRowView.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteRowView.swift; path = Sources/NoteRowView.swift; sourceTree = "<group>"; };
-    1D6058950D05DD3D006BFB54 /* NoteEditorView.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteEditorView.swift; path = Sources/NoteEditorView.swift; sourceTree = "<group>"; };
-    1D6058960D05DD3D006BFB54 /* AudioRecorder.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioRecorder.swift; path = Sources/AudioRecorder.swift; sourceTree = "<group>"; };
-    1D6058970D05DD3D006BFB54 /* SpeechRecognizer.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognizer.swift; path = Sources/SpeechRecognizer.swift; sourceTree = "<group>"; };
-    1D6058980D05DD3D006BFB54 /* Info.plist */ = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
+    A100 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayInspirationApp.swift; path = Sources/TodayInspirationApp.swift; sourceTree = "<group>"; };
+    A101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersistenceController.swift; path = Sources/PersistenceController.swift; sourceTree = "<group>"; };
+    A102 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Note+CoreDataClass.swift; path = Sources/Note+CoreDataClass.swift; sourceTree = "<group>"; };
+    A103 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Sources/ContentView.swift; sourceTree = "<group>"; };
+    A104 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteRowView.swift; path = Sources/NoteRowView.swift; sourceTree = "<group>"; };
+    A105 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteEditorView.swift; path = Sources/NoteEditorView.swift; sourceTree = "<group>"; };
+    A106 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioRecorder.swift; path = Sources/AudioRecorder.swift; sourceTree = "<group>"; };
+    A107 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognizer.swift; path = Sources/SpeechRecognizer.swift; sourceTree = "<group>"; };
+    A108 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Sources/SettingsView.swift; sourceTree = "<group>"; };
+    A110 = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
+    A111 = { isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXSourcesBuildPhase section */
-    1D6058990D05DD3D006BFB54 /* Sources */ = {
+    B1 = {
       isa = PBXSourcesBuildPhase;
       buildActionMask = 2147483647;
       files = (
-        1D6058900D05DD3D006BFB54 /* PersistenceController.swift in Sources */,
-        1D6058920D05DD3D006BFB54 /* Note+CoreDataClass.swift in Sources */,
-        1D6058930D05DD3D006BFB54 /* ContentView.swift in Sources */,
-        1D6058940D05DD3D006BFB54 /* NoteRowView.swift in Sources */,
-        1D6058950D05DD3D006BFB54 /* NoteEditorView.swift in Sources */,
-        1D6058960D05DD3D006BFB54 /* AudioRecorder.swift in Sources */,
-        1D6058970D05DD3D006BFB54 /* SpeechRecognizer.swift in Sources */,
-        1D60588F0D05DD3D006BFB54 /* TodayInspirationApp.swift in Sources */,
+        A1, A2, A3, A4, A5, A6, A7, A8, A9,
       );
       runOnlyForDeploymentPostprocessing = 0;
     };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXGroup section */
-    1D60589A0D05DD3D006BFB54 = {
+    G1 = {
       isa = PBXGroup;
       children = (
-        1D6058980D05DD3D006BFB54 /* Info.plist */,
-        1D60588F0D05DD3D006BFB54 /* TodayInspirationApp.swift */,
-        1D6058900D05DD3D006BFB54 /* PersistenceController.swift */,
-        1D6058920D05DD3D006BFB54 /* Note+CoreDataClass.swift */,
-        1D6058930D05DD3D006BFB54 /* ContentView.swift */,
-        1D6058940D05DD3D006BFB54 /* NoteRowView.swift */,
-        1D6058950D05DD3D006BFB54 /* NoteEditorView.swift */,
-        1D6058960D05DD3D006BFB54 /* AudioRecorder.swift */,
-        1D6058970D05DD3D006BFB54 /* SpeechRecognizer.swift */,
+        A110,
+        A100, A101, A102, A103, A104, A105, A106, A107, A108, A111,
       );
       sourceTree = "<group>";
     };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-    1D60589B0D05DD3D006BFB54 /* TodayInspiration */ = {
+    T1 = {
       isa = PBXNativeTarget;
-      buildConfigurationList = 1D60589C0D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "TodayInspiration" */;
+      buildConfigurationList = C1;
       buildPhases = (
-        1D6058990D05DD3D006BFB54 /* Sources */,
-      );
-      buildRules = (
-      );
-      dependencies = (
+        B1,
       );
       name = TodayInspiration;
       productName = TodayInspiration;
@@ -77,65 +70,42 @@
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-    1D60589D0D05DD3D006BFB54 /* Project object */ = {
+    PROJ = {
       isa = PBXProject;
       attributes = {
         LastUpgradeCheck = 1310;
       };
-      buildConfigurationList = 1D60589E0D05DD3D006BFB54 /* Build configuration list for PBXProject "TodayInspiration" */;
+      buildConfigurationList = C2;
       compatibilityVersion = "Xcode 13.0";
       developmentRegion = en;
       hasScannedForEncodings = 0;
-      knownRegions = (
-        en,
-        Base,
-      );
-      mainGroup = 1D60589A0D05DD3D006BFB54;
-      productRefGroup = 1D60589F0D05DD3D006BFB54;
+      knownRegions = ( en, Base, );
+      mainGroup = G1;
+      productRefGroup = G2;
       projectDirPath = "";
       projectRoot = "";
     };
 /* End PBXProject section */
 
 /* Begin XCBuildConfiguration section */
-    1D60589C0D05DD3D006BFB54 /* Debug */ = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        PRODUCT_NAME = "$(TARGET_NAME)";
-        SWIFT_VERSION = 5.0;
-        IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-      };
-      name = Debug;
-    };
-    1D6058A00D05DD3D006BFB54 /* Release */ = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        PRODUCT_NAME = "$(TARGET_NAME)";
-        SWIFT_VERSION = 5.0;
-        IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-        ENABLE_NS_ASSERTIONS = NO;
-      };
-      name = Release;
-    };
-    1D60589E0D05DD3D006BFB54 /* Build configuration list for PBXProject "TodayInspiration" */ = {
+    C1 = {
       isa = XCConfigurationList;
-      buildConfigurations = (
-        1D60589C0D05DD3D006BFB54 /* Debug */,
-        1D6058A00D05DD3D006BFB54 /* Release */,
-      );
+      buildConfigurations = ( C3, C4 );
       defaultConfigurationIsVisible = 0;
       defaultConfigurationName = Release;
     };
-    1D6058A10D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "TodayInspiration" */ = {
+    C2 = {
       isa = XCConfigurationList;
-      buildConfigurations = (
-        1D60589C0D05DD3D006BFB54 /* Debug */,
-        1D6058A00D05DD3D006BFB54 /* Release */,
-      );
+      buildConfigurations = ( C5, C6 );
       defaultConfigurationIsVisible = 0;
       defaultConfigurationName = Release;
     };
+    C3 = { isa = XCBuildConfiguration; buildSettings = { PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; }; name = Debug; };
+    C4 = { isa = XCBuildConfiguration; buildSettings = { PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; ENABLE_NS_ASSERTIONS = NO; }; name = Release; };
+    C5 = { isa = XCConfigurationList; buildConfigurations = ( C3, C4 ); defaultConfigurationName = Release; };
+    C6 = { isa = XCConfigurationList; buildConfigurations = ( C3, C4 ); defaultConfigurationName = Release; };
+
 /* End XCBuildConfiguration section */
   };
-  rootObject = 1D60589D0D05DD3D006BFB54 /* Project object */;
+  rootObject = PROJ;
 }

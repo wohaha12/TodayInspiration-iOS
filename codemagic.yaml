@@ -4,16 +4,16 @@ workflows:
     environment:
       xcode: latest
     scripts:
-      - name: Clean project
+      - name: Clean derived data
         script: |
           rm -rf ~/Library/Developer/Xcode/DerivedData
-      - name: Build iOS app
+      - name: Build app (no signing)
         script: |
           xcodebuild -project TodayInspiration.xcodeproj \
             -scheme TodayInspiration \
             -sdk iphoneos \
             -configuration Release \
-            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+            clean build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
     artifacts:
       - build/**/*.app
       - build/**/*.ipa

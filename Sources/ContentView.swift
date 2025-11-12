@@ -1,19 +1,17 @@
 import SwiftUI
 import CoreData
-
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
     @FetchRequest(entity: Note.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Note.createdAt, ascending: false)])
     private var notes: FetchedResults<Note>
 
     @State private var showEditor = false
     @State private var filterTag: String? = nil
+    @State private var showSettings = false
 
     var body: some View {
         NavigationView {
             VStack {
-                // Tag filter horizontal list
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         Button(action: { filterTag = nil }) {
@@ -22,7 +20,7 @@ struct ContentView: View {
                                 .background(filterTag == nil ? Color.accentColor.opacity(0.2) : Color.clear)
                                 .cornerRadius(8)
                         }
-                        ForEach(allTags(), id: \.self) { tag in
+                        ForEach(allTags(), id: \ .self) { tag in
                             Button(action: { filterTag = tag }) {
                                 Text(tag)
                                     .padding(8)
@@ -45,6 +43,11 @@ struct ContentView: View {
             }
             .navigationTitle("今日灵感")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { showSettings = true }) {
+                        Image(systemName: "gearshape")
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: { showEditor = true }) {
                         Image(systemName: "plus")
@@ -53,6 +56,9 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showEditor) {
                 NoteEditorView()
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
             }
         }
     }
