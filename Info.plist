@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key><string>en</string>
+    <key>CFBundleExecutable</key><string>TodayInspiration</string>
+    <key>CFBundleIdentifier</key><string>com.example.TodayInspiration</string>
+    <key>CFBundleName</key><string>TodayInspiration</string>
+    <key>CFBundleDisplayName</key><string>今日灵感</string>
+    <key>LSApplicationCategoryType</key><string>public.app-category.productivity</string>
+
+    <!-- Privacy usage descriptions -->
+    <key>NSPhotoLibraryUsageDescription</key><string>用于为便签添加图像。</string>
+    <key>NSCameraUsageDescription</key><string>用于拍照并添加到便签。</string>
+    <key>NSMicrophoneUsageDescription</key><string>用于录制语音以转换为文字。</string>
+    <key>NSSpeechRecognitionUsageDescription</key><string>用于将录制的语音转为文字以便快速记录灵感。</string>
+</dict>
+</plist>
